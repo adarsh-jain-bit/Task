@@ -26,10 +26,6 @@ const [currentPage, setCurrentPage] = useState(1);
         setCurrentPage(prevPage => prevPage - 1);
     }
 
-    function SpecificPage(pageNumber) {
-        setCurrentPage(pageNumber);
-    }
-
 
   return (
   <>
@@ -85,7 +81,7 @@ const [currentPage, setCurrentPage] = useState(1);
     </thead>
     <tbody>
 
-        {users?.map((val) => (
+        {users.slice((currentPage - 1) * itemsPerPage , ((currentPage - 1) * itemsPerPage) + itemsPerPage)?.map((val) => (
    <tr key={val.id}>
         <td className="p-4 border-b border-blue-gray-50">
           <p className="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
