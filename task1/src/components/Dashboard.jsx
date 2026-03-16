@@ -11,8 +11,8 @@ export default function Dashboard() {
 
   return (
     <div className="text-center mt-10">
-      <h1>Dashboard</h1>
-      <button onClick={logout}>Logout</button>
+      <h1 className="text-2xl">Dashboard</h1>
+      <button onClick={logout} className="bg-blue-500 rounded-md p-2 text-white mt-4"  >Logout</button>
     </div>
   );
 }

@@ -3,22 +3,19 @@ import Task3FormValidation from "./components/Task3FormValidation";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Dashboard from "./components/Dashboard";
-import ProtectedRoute from "./ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./components/Login";
+import Header from "./layout/Header";
 
 function App() {
  
   return (
  <>
-{/* tast one is not done completely due to some configration error come and takes 20 min there so 
-its not done and task 4 is in seperate folder named Task4 and task 3 is done and task 2 is also done 
-*/}
- {/* task 2 */}
- <Task2FetchDataandShow/>
- {/* task 3 */}
- {/* <Task3FormValidation/> */}
+
+ {/* task 4 in seperate file */}
 
   <BrowserRouter>
+  <Header/>
       <Routes>
 
         <Route path="/" element={<Login />} />
@@ -30,6 +27,24 @@ its not done and task 4 is in seperate folder named Task4 and task 3 is done and
               <Dashboard />
             </ProtectedRoute>
           }
+
+        />
+
+        
+        <Route
+          path="/task2"
+          element={
+           <Task2FetchDataandShow/>
+          }
+          
+        />
+
+         <Route
+          path="/task3"
+          element={
+           <Task3FormValidation/>
+          }
+          
         />
 
       </Routes>
